@@ -1,0 +1,500 @@
+  250  ps -aux
+  251  nvidia-smi
+  252  nvidia-smi
+  253  kill 32014
+  254  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=faster_rcnn_inception_v2_coco.config &
+  255  cd models/research/object_detection/swedish_signs_rcnn/
+  256  tensorboard --logdir=models/train/
+  257  ls
+  258  ls models/research/object_detection/russian_signs_rcnn/models/train/
+  259  cd models/research/object_detection/swedish_signs_rcnn/
+  260  ls
+  261  ls fine_tuned_model/
+  262  cd ..
+  263  cd swedish_signs_rcnn/
+  264  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./faster_rcnn_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-40000 --output_directory ./fine_tuned_model
+  265  cd ..
+  266  cd ..
+  267  export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim 
+  268  cd object_detection/swedish_signs_rcnn/
+  269  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./faster_rcnn_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-40000 --output_directory ./fine_tuned_model
+  270  ls fine_tuned_model/
+  271  rm -r fine_tuned_model/
+  272  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./faster_rcnn_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-40000 --output_directory ./fine_tuned_model
+  273  python eval.py --logtostderr --eval_dir=eval --pipeline_config_path=faster_rcnn_inception_v2_coco.config --checkpoint_dir=models/train/ &
+  274  nvidia-smi
+  275  kill 8704
+  276  python eval.py --logtostderr --eval_dir=eval --pipeline_config_path=faster_rcnn_inception_v2_coco.config --checkpoint_dir=models/train/ &
+  277  ps -aux
+  278  kill 10163
+  279  cd ..
+  280  cd road_signs_train/
+  281  ls models/trai
+  282  cd ..
+  283  cd russian_signs_
+  284  cd russian_signs_rcnn/
+  285  nvidia-smi
+  286  kill 10174
+  287  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=faster_rcnn_inception_v2_coco.config &
+  288  cd ..
+  289  cd swedish_signs_rcnn/
+  290  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=faster_rcnn_inception_v2_coco.config &
+  291  ды
+  292  ls
+  293  rm -r fine_tuned_model/
+  294  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./faster_rcnn_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-50000 --output_directory ./fine_tuned_model
+  295  nvidia-smi
+  296  ps -aux
+  297  nvidia-smi
+  298  cd ..
+  299  cd swedish_signs_ssd/
+  300  ls
+  301  cp ../swedish_signs_rcnn/export_inference_graph.py .
+  302  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./ssd_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-10215 --output_directory ./fine_tuned_model
+  303  nvidia-smi
+  304  nvidia-smi
+  305  cd ..
+  306  cd swedish_signs_rcnn/
+  307  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=faster_rcnn_inception_v2_coco.config &
+  308  nvidia-smi
+  309  kill 1583215832
+  310  kill 15832
+  311  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=faster_rcnn_inception_v2_coco.config &
+  312  cd models/research/object_detection/swedish_signs_rcnn/
+  313  tensorboard --logdir=eval
+  314  tensorboard --logdir=models/train/
+  315  tensorboard --logdir=eval
+  316  tensorboard --logdir=models/train/
+  317  cd ..
+  318  cd road_signs_train/
+  319  tensorboard --logdir=models/train/
+  320  cd ..
+  321  cd russian_signs_rcnn/
+  322  tensorboard --logdir=models/train/
+  323  ps -aux
+  324  kill 12919
+  325  cd ..
+  326  cd swedish_signs_rcnn/
+  327  tensorboard --logdir=models/train/
+  328  cd models/research/object_detection/swedish_signs_rcnn/
+  329  tensorboard --logdir=models/train/
+  330  ls models/train/
+  331  cd ..
+  332  cd russian_signs_rcnn/
+  333  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=faster_rcnn_inception_v2_coco.config &
+  334  cd ..
+  335  cd ..
+  336  export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim 
+  337  cd object_detection/russian_signs_rcnn/
+  338  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=faster_rcnn_inception_v2_coco.config &
+  339  ls
+  340  cd models/research/object_detection/russian_signs_rcnn/
+  341  tensorboard --logdir=models/train/
+  342  cd models/research/object_detection/swedish_signs_rcnn/
+  343  ls models/train/
+  344  nvidia-smi
+  345  cd ..
+  346  cd russian_signs_rcnn/
+  347  ls models/train/
+  348  nvidia-smi
+  349  nvidia-smi
+  350  nvidia-smi
+  351  nvidia-smi
+  352  nvidia-smi
+  353  зы -фгч
+  354  ls models/train/
+  355  nvidia-smi
+  356  nvidia-smi
+  357  ls
+  358  ls
+  359  cd ..
+  360  cd pr
+  361  cd prs/
+  362  cd models/research/object_detection/russian_signs_ssd/
+  363  ls models/train/
+  364  cd ..
+  365  cd swedish_signs_ssd/
+  366  ls models/train/
+  367  nvidia-smi
+  368  kill 4311
+  369  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=ssd_inception_v2_coco.config &
+  370  cd ..
+  371  cd ..
+  372  cd ..
+  373  cd research/
+  374  export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim 
+  375  cd object_detection/swedish_signs_ssd/
+  376  python train.py --logtostderr --train_dir=./models/train --pipeline_config_path=ssd_inception_v2_coco.config &
+  377  cd models/research/object_detection/swedish_signs_ssd/
+  378  nvidia-smi
+  379  tensorboard --logdir=models/train/
+  380  bg
+  381  nvidia-smi
+  382  strace -p 16628
+  383  strace -p 16628 -c 1000
+  384  strace -p 16628 -s 1000
+  385  nvidia-smi
+  386  kill 16628
+  387  ps -aux
+  388  kill 16650
+  389  nvidia-smi
+  390  cd models/research/object_detection/swedish_signs_ssd/
+  391  ls
+  392  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./ssd_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-16038 --output_directory ./fine_tuned_model
+  393  cd ..
+  394  cd ..
+  395  export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim 
+  396  cd object_detection/swedish_signs_ssd/
+  397  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./ssd_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-16038 --output_directory ./fine_tuned_model
+  398  rm -r fine_tuned_model/
+  399  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ./ssd_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-16038 --output_directory ./fine_tuned_model
+  400  cd ..
+  401  cd russian_signs_rcnn/
+  402  ls
+  403  python export_inference_graph.py --input_type image_tensor --pipeline_config_path faster_rcnn_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-100000 --output_directory ./fine_tuned_model
+  404  cd ..
+  405  cd russian_signs_ssd/
+  406  ls
+  407  rm fine_tuned_model/
+  408  rm -r fine_tuned_model/
+  409  python export_inference_graph.py --input_type image_tensor --pipeline_config_path faster_rcnn_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-100000 --output_directory ./fine_tuned_model
+  410  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ssd_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-68895 --output_directory ./fine_tuned_model
+  411  nvidia-smi
+  412  kill 20356
+  413  python export_inference_graph.py --input_type image_tensor --pipeline_config_path ssd_inception_v2_coco.config --trained_checkpoint_prefix ./models/train/model.ckpt-68895 --output_directory ./fine_tuned_model
+  414  cd ..
+  415  cd ..
+  416  cd ..
+  417  cd ..
+  418  ls /jet/prs/russian_signs/rtsd/rtsd-frames/autosave23_10_2012_10_41_44_2.jpg
+  419  ды
+  420  ls
+  421  ls -lh
+  422  cd models/research/object_detection/russian_signs_ssd/
+  423  tensorboard --logdir=models/train/
+  424  cd ..
+  425  cd russian_signs_rcnn/
+  426  tensorboard --logdir=models/train/
+  427  cd ..
+  428  cd swedish_signs_rcnn/
+  429  tensorboard --logdir=models/train/
+  430  cd ..
+  431  cd swedish_signs_ssd/
+  432  tensorboard --logdir=models/train/
+  433  ps -aux | less
+  434  history | grep jupyter
+  435  history | grep jupyter-notebook
+  436  history
+  437  jupyter-notebook --no-browser --port=5000 --allow-root
+  438  bg
+  439  ls
+  440  ls
+  441  ls -lh
+  442  sat weights_swedish.h5 
+  443  stat weights_swedish.h5 
+  444  screen
+  445  ls
+  446  tensorboard --log-dir=logs/
+  447  tensorboard --logdir=logs/
+  448  jupyter-notebook --no-browser --port=5000 --allow-root
+  449  bg
+  450  ls
+  451  stat weights_russian_07_10.08.h5 
+  452  ls
+  453  git init
+  454  git status
+  455  git add road_signs-5.ipynb 
+  456  gti add classify_croped.ipynb 
+  457  git add classify_croped.ipynb 
+  458  ls -lh
+  459  git add classify_croped_weights
+  460  git add classify_croped_weights_russian 
+  461  git add classify_croped_weights_swedish 
+  462  ls cocoapi/
+  463  git add dataset_stat.ipynb 
+  464  git add generate_train_data.py 
+  465  ls russian_signs/
+  466  ls -lh russian_signs/
+  467  git add russian_signs/get_data.py 
+  468  git add russian_signs/russian_signs_sample_images.py 
+  469  git add russian_signs/Untitled.ipynb 
+  470  git add swedish_signs/get_data.py 
+  471  ls swedish_signs/
+  472  ls
+  473  ls -lh
+  474  ls to_export/
+  475  ls -lh
+  476  cd models/
+  477  ls
+  478  cd research/
+  479  ls
+  480  ls -lh
+  481  cd object_detection/
+  482  ls -lh
+  483  git add all_annotations_swedish_with_class 
+  484  git add all_detections_swedish_with_class
+  485  git add all_detections_swedish_with_class.dat 
+  486  ls data
+  487  git add diploma.ipynb 
+  488  git status
+  489  git status .
+  490  cd ..
+  491  cd ..
+  492  cd ..
+  493  cd models/
+  494  git status
+  495  ls -lh
+  496  git remote add origin https://github.com/tveritinova/models.git
+  497  git remote set-url origin https://github.com/tveritinova/models.git
+  498  git stATUS
+  499  git status
+  500  git add research/object_detection/russian_signs_data/
+  501  cd models/
+  502  git status
+  503  git log
+  504  git log --log-size
+  505  git reset --soft HEAD~2
+  506  git status
+  507  git rm research/object_detection/swedish_signs_ssd/models/train/model.ckpt-13433.*
+  508  git rm --cached research/object_detection/swedish_signs_ssd/models/train/model.ckpt-13433.*
+  509  git status
+  510  git rm --cached research/object_detection/swedish_signs_ssd/models/train/model.ckpt-14*
+  511  git rm --cached research/object_detection/swedish_signs_ssd/models/train/model.ckpt-15*
+  512  git status
+  513  git rm --cached research/object_detection/swedish_signs_rcnn/models/train/model.ckpt-9*
+  514  git status
+  515  git rm --cached research/object_detection/swedish_signs_rcnn/models/train/events.*
+  516  git status
+  517  git rm --cached research/object_detection/swedish_signs_ssd/eval/events.*
+  518  git status
+  519  git rm --cached research/object_detection/swedish_signs_ssd/models/train/events.*
+  520  git status
+  521  git rm --cached research/object_detection/russian_signs_ssd/models/train/events.*
+  522  git status
+  523  git rm --cached research/object_detection/russian_signs_rcnn/models/train/events.*
+  524  git status
+  525  git rm --cached research/object_detection/russian_signs_rcnn/models/train/model.ckpt-9*
+  526  git status
+  527  git rm --cached research/object_detection/russian_signs_ssd/models/train/model.ckpt-66*
+  528  git rm --cached research/object_detection/russian_signs_ssd/models/train/model.ckpt-67*
+  529  git status
+  530  git rm --cached research/object_detection/russian_signs_ssd/models/train/model.ckpt-683*
+  531  git status
+  532  git commit -m "changes"
+  533  git push origin maste
+  534  git push origin master
+  535  git pull
+  536  git push origin master
+  537  split research/object_detection/russian_signs_rcnn/fine_tuned_model/saved_model/saved_model.pb --bytes=81920
+  538  git status
+  539  cd research/object_detection/russian_signs_ssd/fine_tuned_model/saved_model/
+  540  ls
+  541  mkdir split_saved_model.pb
+  542  cd split_saved_model.pb/
+  543  split ../saved_model.pb --bytes=81920 --numeric-suffixes
+  544  ls
+  545  ls -lh
+  546  rm *
+  547  split ../saved_model.pb --bytes=83886080 --numeric-suffixes
+  548  ls -lh
+  549  git rm --cached ../saved_model.pb 
+  550  git add *
+  551  cd ..
+  552  cd ..
+  553  cd ..
+  554  cd models/
+  555  ls
+  556  cd train/
+  557  ls
+  558  mkdir split_model.ckpt-16038.data-00000-of-00001
+  559  cd split_model.ckpt-16038.data-00000-of-00001/
+  560  split ../model.ckpt-16038.data-00000-of-00001 --bytes=83886080 --numeric-suffixes
+  561  cd  ..
+  562  mv split_model.ckpt-16038.data-00000-of-00001/ ./split_model.ckpt-68895.data-00000-of-00001
+  563  cd split_model.ckpt-68895.data-00000-of-00001/
+  564  split ../model.ckpt-68895.data-00000-of-00001 --bytes=83886080 --numeric-suffixes
+  565  ls
+  566  ls -lh
+  567  git rm --cached ../model.ckpt-68895.data-00000-of-00001
+  568  git add *
+  569  cd ..
+  570  cd ..
+  571  cd ..
+  572  cd ..
+  573  swedish_signs_ssd/models/train/
+  574  cd swedish_signs_ssd/models/train/
+  575  mkdir split_model.ckpt-16038.data-00000-of-00001
+  576  cd split_model.ckpt-16038.data-00000-of-00001/
+  577  split ../model.ckpt-16038.data-00000-of-00001 --bytes=83886080 --numeric-suffixes
+  578  ls -lh
+  579  git add *
+  580  git rm --cached ../model.ckpt-16038.data-00000-of-00001
+  581  cd ..
+  582  cd ..
+  583  cd ..
+  584  cd ..
+  585  cd russian_signs_rcnn/models/train/
+  586  mkdir split_model.ckpt-100000.data-00000-of-00001
+  587  cd split_model.ckpt-100000.data-00000-of-00001/
+  588  split ../model.ckpt-100000.data-00000-of-00001 --bytes=83886080 --numeric-suffixes
+  589  git add *
+  590  git rm --cached ../model.ckpt-100000.data-00000-of-00001
+  591  cd ../../../
+  592  cd ..
+  593  cd russian_signs_ssd/fine_tuned_model/
+  594  mkdir split_frozen_inference_graph.pb
+  595  cd split_frozen_inference_graph.pb/
+  596  split ../frozen_inference_graph.pb --bytes=83886080 --numeric-suffixes
+  597  git add *
+  598  git rm --cached ../frozen_inference_graph.pb
+  599  cd ..
+  600  mkdir 
+  601  mkdir split_model.ckpt.data-00000-of-00001
+  602  cd split_model.ckpt.data-00000-of-00001/
+  603  split ../model.ckpt.data-00000-of-00001 --bytes=83886080 --numeric-suffixes
+  604  git add *
+  605  git rm --cached ../model.ckpt.data-00000-of-00001
+  606  git status
+  607  git commit -m "split"
+  608  cd ..
+  609  cd ..
+  610  cd ..
+  611  cd ..
+  612  cd ..
+  613  cd ..
+  614  cd models/
+  615  git push origin master
+  616  git diff --stat --cached origin/master
+  617  git rm --cached research/object_detection/russian_signs_ssd/models/model.ckpt.data-00000-of-00001
+  618  git commit -m "rm"
+  619  git diff --stat --cached origin/master
+  620  git push origin master
+  621  git diff --stat --cached origin/master
+  622  git rm --cached .../object_detection/russian_signs_ssd/fine_tuned_model/split_model.ckpt.data-00000-of-00001/x00 
+  623  git rm --cached research/object_detection/russian_signs_ssd/fine_tuned_model/split_model.ckpt.data-00000-of-00001/x00 
+  624  git rm --cached research/object_detection/russian_signs_ssd/fine_tuned_model/saved_model/split_saved_model.pb/x00
+  625  git rm --cached research/object_detection/russian_signs_rcnn/models/train/split_model.ckpt-100000.data-00000-of-00001/x00
+  626  git commit -m "rm"
+  627  git push origin master
+  628  git diff --stat --cached origin/master
+  629  git rm --cached russian_signs_rcnn/models/train/split_model.ckpt-100000.data-00000-of-00001/x00
+  630  git rm --cached research/object_detection/russian_signs_rcnn/models/train/split_model.ckpt-100000.data-00000-of-00001/x00
+  631  git rm --cached research/object_detection/russian_signs_rcnn/models/train/split_model.ckpt-100000.data-00000-of-00001/x00
+  632  git status
+  633  git diff --stat --cached origin/master
+  634  git rm --cached research/object_detection/russian_signs_ssd/fine_tuned_model/saved_model/split_saved_model.pb/x01
+  635  git rm --cached research/object_detection/russian_signs_rcnn/fine_tuned_model/frozen_inference_graph.pb
+  636  git commit -m "rm"
+  637  git push origin master
+  638  git diff --stat --cached origin/master
+  639  git rm --cached research/object_detection/russian_signs_ssd/fine_tuned_model/split_frozen_inference_graph.pb/x00
+  640  git rm --cached research/object_detection/russian_signs_ssd/fine_tuned_model/split_frozen_inference_graph.pb/x01
+  641  git diff --stat --cached origin/master
+  642  git rm --cached research/object_detection/russian_signs_ssd/fine_tuned_model/split_frozen_inference_graph.pb/x01
+  643  git rm --cached research/object_detection/russian_signs_ssd/eval/events.out.tfevents.1527351678.tensorflow15-python3-cuda91-1-vm
+  644  git rm --cached research/object_detection/russian_signs_rcnn/fine_tuned_model/model.ckpt.data-00000-of-00001 
+  645  git rm --cached research/object_detection/all_detections_swedish_with_class.dat
+  646  git commit -m "new rm"
+  647  git rm --cached object_detection/russian_signs_ssd/models/train/split_model.ckpt-68895.data-00000-of-00001/x00
+  648  git rm --cached ./research/object_detection/russian_signs_ssd/models/train/split_model.ckpt-68895.data-00000-of-00001/x00
+  649  git commit -m "new rm"
+  650  git push origin master
+  651  git log
+  652  git reset --soft HEAD~5
+  653  git log
+  654  git status
+  655  git commit -m "rm"
+  656  git log
+  657  git reset --soft HEAD~2
+  658  git commit -m "split"
+  659  git push origin master
+  660  git status
+  661  git log
+  662  git reset --soft HEAD~1
+  663  git log
+  664  git status
+  665  rm x*
+  666  git status
+  667  rm research/object_detection/test_images/*
+  668  git status
+  669  git rm --cached research/object_detection/swedish_signs_ssd/models/train/split_model.ckpt-16038.data-00000-of-00001/x00
+  670  git rm --cached research/object_detection/swedish_signs_ssd/models/train/split_model.ckpt-16038.data-00000-of-00001/x01
+  671  git rm --cached research/object_detection/swedish_signs_ssd/models/train/split_model.ckpt-16038.data-00000-of-00001/x02
+  672  git status
+  673  git log
+  674  git reset --soft HEAD~2
+  675  git status
+  676  git pull
+  677  git status
+  678  git rm --cache research/object_detection/swedish_signs_ssd
+  679  git rm --cache -r research/object_detection/swedish_signs_ssd
+  680  git status
+  681  git status
+  682  git rm --cache -r research/object_detection/swedish_signs_ssd
+  683  git rm -r --cache research/object_detection/swedish_signs_ssd
+  684  git rm -r --cache research/object_detection/swedish_signs_rcnn
+  685  git rm -r --cache research/object_detection/russian_signs_rcnn
+  686  git status
+  687  git rm --cache research/object_detection/russian_signs_ssd/models/train/model.ckpt*
+  688* git rm --cache research/object_detection/russian_signs_ssd/models/train/model.ckpt-68895.data-00000-of-00001 
+  689  git rm --cache research/object_detection/russian_signs_ssd/models/train/model.ckpt-68895.meta
+  690  git rm --cache research/object_detection/russian_signs_ssd/models/train/model.ckpt-68895.index 
+  691  git status
+  692  git rm -r --cache research/object_detection/russian_signs_ssd/fine_tuned_model
+  693  git status
+  694  git rm -r --cache research/object_detection/russian_signs_ssd/ssd_inception_v2_coco_2017_11_17
+  695  git status
+  696  git diff --stat --cached origin/master
+  697  git commit -m "first split"
+  698  git log
+  699  git push origin master
+  700  git status
+  701  git add research/object_detection/russian_signs_rcnn/
+  702  git status
+  703  git rm --cache research/object_detection/russian_signs_rcnn/models/train/model.ckpt*
+  704  git status
+  705  git rm --cache research/object_detection/russian_signs_rcnn/models/train/events.*
+  706  git status
+  707  git rm --cache research/object_detection/russian_signs_rcnn/eval/events.*
+  708  git commit -m "2 commit"
+  709  git push origin master
+  710  git status
+  711  git add research/object_detection/swedish_signs_ssd/
+  712  git status
+  713  git rm research/object_detection/swedish_signs_ssd/models/train/model.ckpt*
+  714  git status
+  715  git rm --cache research/object_detection/swedish_signs_ssd/models/train/model.ckpt*
+  716  git status
+  717  git rm --cache research/object_detection/swedish_signs_ssd/models/train/events.out*
+  718  git status
+  719  git rm --cache research/object_detection/swedish_signs_ssd/eval/events.*
+  720  git status
+  721  git commit -m "3 commit"
+  722  git push origin master
+  723  git push origin master
+  724  git status
+  725  git add research/object_detection/swedish_signs_rcnn/
+  726  git status
+  727  git rm --cache research/object_detection/swedish_signs_rcnn/models/train/events.out.
+  728  git rm --cache research/object_detection/swedish_signs_rcnn/models/train/events.out.*
+  729  git status
+  730  git rm --cache research/object_detection/swedish_signs_rcnn/models/train/model.ckpt-9*
+  731  git status
+  732  git rm --cache research/object_detection/swedish_signs_rcnn/eval/events.
+  733  git rm --cache research/object_detection/swedish_signs_rcnn/eval/events.*
+  734  git status
+  735  git commit "yet another commit"
+  736  git commit -m "yet another commit"
+  737  git push origin master
+  738  git status
+  739  ls research/object_detection/russian_signs_ssd/ssd_inception_v2_coco_2017_11_17/
+  740  cd ..
+  741  git status
+  742  ls -lh
+  743  git status
+  744  git commit -m "save"
+  745  git push origin master
+  746  git remote add origin https://github.com/tveritinova/road_signs_new.git
+  747  git push origin master
+  748  git status
+  749  history > history
